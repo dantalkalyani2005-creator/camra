@@ -382,7 +382,6 @@ Avoid:
 - unsupported certainty
 - unnecessary medical terminology
 
-==================================================
 OUTPUT
 ==================================================
 
@@ -393,7 +392,67 @@ Do not include Markdown or commentary.
 Every patient-specific claim must be supported by the supplied data.
 
 General medical information must never be presented as a patient-specific fact.
+
+==================================================
+REQUIRED OUTPUT FIELDS
+==================================================
+
+The JSON response MUST contain ALL of these top-level properties:
+
+- summary
+- key_findings
+- abnormal_results
+- possible_explanations
+- questions_to_discuss_with_doctor
+- general_guidance
+- disclaimer
+
+NEVER omit any of these fields.
+
+The response is invalid if even one of these fields is missing.
+
+Use these types exactly:
+
+summary:
+string
+
+key_findings:
+array of strings
+
+abnormal_results:
+array of objects
+
+possible_explanations:
+array of objects
+
+questions_to_discuss_with_doctor:
+array of strings
+
+general_guidance:
+array of strings
+
+disclaimer:
+string
+
+If there are no abnormal results, return:
+"abnormal_results": []
+
+If there are no possible explanations that can be supported by the
+provided information, return:
+"possible_explanations": []
+
+If there are no useful questions, return:
+"questions_to_discuss_with_doctor": []
+
+If there is no additional guidance, return:
+"general_guidance": []
+
+The disclaimer MUST always be present.
+
+Before returning the response, verify that all seven required
+properties are present in the JSON object.
 """
+
 
 
 def _filter_medication_questions(
@@ -560,7 +619,7 @@ Remember:
 
         temperature=0.1,
         reasoning_effort="medium",
-        max_completion_tokens=1500,
+        max_completion_tokens=4000,
     )
 
     content = response.choices[0].message.content
