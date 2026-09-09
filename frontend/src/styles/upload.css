@@ -1,0 +1,625 @@
+/* =========================================================
+   CAMRA — Upload Report
+   Mobile First
+   ========================================================= */
+
+.upload-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   Page Heading
+   ========================================================= */
+
+.page-heading {
+    margin-bottom: 28px;
+}
+
+.page-heading h1 {
+    margin: 7px 0 8px;
+    color: var(--charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 7vw, 40px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+}
+
+.page-heading p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   Main Layout
+   ========================================================= */
+
+.upload-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.upload-main-card {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   Upload Dropzone
+   ========================================================= */
+
+.upload-dropzone {
+    width: 100%;
+    min-height: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border: 1.5px dashed #d4ced9;
+    border-radius: 12px;
+    background: var(--lavender-soft);
+    color: var(--text-dark);
+    text-align: center;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.dragging {
+    border-color: var(--deep-lavender);
+    background: #eee9f6;
+}
+
+.upload-dropzone.dragging {
+    transform: scale(0.995);
+}
+
+.upload-icon-large {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    background: var(--white);
+    color: var(--deep-lavender);
+    box-shadow: var(--shadow-sm);
+}
+
+.upload-dropzone h2 {
+    margin: 0 0 7px;
+    color: var(--charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.upload-dropzone p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.upload-formats {
+    margin-top: 14px;
+    color: #858a8e;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   Selected File
+   ========================================================= */
+
+.selected-file {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--ivory);
+}
+
+.selected-file-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    background: var(--blue-soft);
+    color: var(--blue);
+}
+
+.selected-file-info {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.selected-file-info strong {
+    overflow: hidden;
+    color: var(--charcoal);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.selected-file-info span {
+    color: #858a8e;
+    font-size: 10px;
+}
+
+.remove-file-button {
+    flex: 0 0 auto;
+    padding: 7px 8px;
+    border-radius: 7px;
+    background: transparent;
+    color: #9a6876;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.remove-file-button:hover {
+    background: var(--rose-soft);
+    color: #754454;
+}
+
+.remove-file-button:disabled {
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   Report Name
+   ========================================================= */
+
+.report-name-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.report-name-field > label,
+.additional-information-field > label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.report-name-field > label span,
+.additional-information-field > label span {
+    color: #92969a;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.report-name-field input,
+.additional-information-field textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    outline: none;
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--text-dark);
+    font-size: 12px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.report-name-field input {
+    min-height: 46px;
+    padding: 0 13px;
+}
+
+.report-name-field input::placeholder,
+.additional-information-field textarea::placeholder {
+    color: #9a9da0;
+}
+
+.report-name-field input:hover,
+.additional-information-field textarea:hover {
+    border-color: #d9d4d8;
+}
+
+.report-name-field input:focus,
+.additional-information-field textarea:focus {
+    border-color: var(--deep-lavender);
+    box-shadow:
+        0 0 0 3px rgba(117, 107, 143, 0.10);
+}
+
+.report-name-field small,
+.additional-information-field small {
+    margin-top: 7px;
+    color: #858a8e;
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   Process Button
+   ========================================================= */
+
+.upload-process-button {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   Processed Report
+   ========================================================= */
+
+.processed-report {
+    display: flex;
+    flex-direction: column;
+}
+
+.processed-success {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 13px;
+    border: 1px solid rgba(84, 117, 138, 0.20);
+    border-radius: 10px;
+    background: var(--blue-soft);
+}
+
+.success-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--blue);
+}
+
+.processed-success > div:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.processed-success strong {
+    color: var(--charcoal);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.processed-success span {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   Additional Information
+   ========================================================= */
+
+.additional-information-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.additional-information-field textarea {
+    min-height: 125px;
+    padding: 12px 13px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   Extracted Report Preview
+   ========================================================= */
+
+.processed-report-preview {
+    margin-top: 25px;
+}
+
+.preview-label {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--deep-lavender);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+}
+
+.preview-box {
+    max-height: 330px;
+    overflow: auto;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #faf9fa;
+    color: #555b60;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+    font-size: 10px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   Final Action
+   ========================================================= */
+
+.processed-report > .primary-action {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   Upload Error
+   ========================================================= */
+
+.upload-error {
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   How It Works
+   ========================================================= */
+
+.upload-side-card {
+    width: 100%;
+    padding: 22px 18px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    align-items: center;
+}
+
+.upload-side-card h3 {
+    margin: 7px 0 24px;
+    color: var(--charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.upload-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    width: 100%;
+    border-top: 1px solid var(--border);
+}
+
+.upload-step-number {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    background: var(--lavender-soft);
+    color: var(--deep-lavender);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+}
+
+.upload-step > div:last-child {
+    min-width: 0;
+}
+
+.upload-step strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--charcoal);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.upload-step p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.upload-note {
+    margin-top: 15px;
+    padding: 13px;
+    border-left: 2px solid var(--peach);
+    background: rgba(245, 221, 210, 0.30);
+}
+
+.upload-note strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--charcoal);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.upload-note p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (min-width: 560px) {
+
+    .upload-main-card {
+        padding: 20px;
+    }
+
+    .upload-dropzone {
+        min-height: 330px;
+    }
+
+    .upload-side-card {
+        padding: 25px 22px;
+    }
+}
+
+
+/* =========================================================
+   Desktop
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+    .page-heading {
+        margin-bottom: 34px;
+    }
+
+    .page-heading h1 {
+        font-size: 40px;
+    }
+
+    .page-heading p {
+        font-size: 13px;
+    }
+
+    .upload-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        align-items: start;
+        gap: 22px;
+    }
+
+    .upload-main-card {
+        padding: 22px;
+    }
+
+    .upload-dropzone {
+        min-height: 360px;
+    }
+
+    .upload-dropzone h2 {
+        font-size: 25px;
+    }
+
+    .upload-dropzone p {
+        font-size: 12px;
+    }
+
+    .selected-file {
+        padding: 14px;
+    }
+
+    .upload-side-card {
+        position: sticky;
+        top: 98px;
+        padding: 25px 22px;
+    }
+}
+
+
+/* =========================================================
+   Large Desktop
+   ========================================================= */
+
+@media (min-width: 1100px) {
+
+    .upload-layout {
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 28px;
+    }
+
+    .upload-main-card {
+        padding: 26px;
+    }
+
+    .upload-side-card {
+        padding: 28px 24px;
+    }
+}
+
+
+/* =========================================================
+   Small Screens
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .page-heading h1 {
+        font-size: 27px;
+    }
+
+    .upload-main-card {
+        padding: 12px;
+    }
+
+    .upload-dropzone {
+        min-height: 270px;
+        padding: 24px 14px;
+    }
+
+    .upload-dropzone h2 {
+        font-size: 20px;
+    }
+
+    .selected-file {
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .selected-file-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .remove-file-button {
+        padding: 6px;
+    }
+
+    .upload-side-card {
+        padding: 20px 15px;
+    }
+}

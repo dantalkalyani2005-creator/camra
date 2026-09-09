@@ -1,0 +1,750 @@
+/* =========================================================
+   CAMRA — Global Styles
+   Common components only
+   Mobile First
+   ========================================================= */
+
+
+/* =========================================================
+   Root
+   ========================================================= */
+
+:root {
+    --ivory: #fcfaf9;
+    --white: #ffffff;
+
+    --lavender: #e5ddf3;
+    --lavender-soft: #f3eff9;
+    --deep-lavender: #756b8f;
+
+    --blue: #54758a;
+    --blue-soft: #eaf2f6;
+
+    --rose: #c98296;
+    --rose-soft: #f6dce3;
+
+    --peach: #f5ddd2;
+
+    --charcoal: #34383b;
+    --text-dark: #34383b;
+    --muted: #555b60;
+    --border: #e7e3e5;
+
+    --shadow-sm:
+        0 4px 16px rgba(52, 56, 59, 0.05);
+
+    --shadow-md:
+        0 12px 32px rgba(52, 56, 59, 0.08);
+
+    --shadow-lg:
+        0 24px 60px rgba(52, 56, 59, 0.12);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================================
+   Reset
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+
+    min-width: 320px;
+    min-height: 100vh;
+
+    background: var(--ivory);
+    color: var(--charcoal);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+svg {
+    display: block;
+}
+
+
+/* =========================================================
+   CAMRA Logo
+   ========================================================= */
+
+.camra-logo {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--charcoal);
+}
+
+.camra-logo-mark {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    border-radius: 10px;
+
+    background: var(--deep-lavender);
+    color: var(--white);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 14px rgba(117, 107, 143, 0.22);
+}
+
+.camra-logo-text {
+    font-size: 18px;
+    font-weight: 750;
+
+    letter-spacing: 0.16em;
+}
+
+.camra-logo-light {
+    color: var(--white);
+}
+
+.camra-logo-light .camra-logo-mark {
+    background: rgba(255, 255, 255, 0.18);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.24);
+}
+
+
+/* =========================================================
+   Application Layout
+   ========================================================= */
+
+.app-layout {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--ivory);
+}
+
+
+/* =========================================================
+   Navigation
+   ========================================================= */
+
+.top-navbar {
+    position: sticky;
+    top: 0;
+
+    z-index: 50;
+
+    width: 100%;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    border-bottom:
+        1px solid rgba(231, 227, 229, 0.8);
+
+    background:
+        rgba(252, 250, 249, 0.94);
+
+    backdrop-filter: blur(18px);
+}
+
+.navbar-left {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-button {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0;
+
+    background: transparent;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   Desktop Navigation
+   ========================================================= */
+
+.desktop-navigation {
+    display: none;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.navigation-link {
+    min-height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 14px;
+
+    border-radius: 9px;
+
+    background: transparent;
+    color: var(--muted);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.navigation-link:hover {
+    background: var(--lavender-soft);
+    color: var(--deep-lavender);
+}
+
+.navigation-link.active {
+    background: var(--lavender);
+    color: var(--deep-lavender);
+}
+
+
+/* =========================================================
+   Mobile Menu Button
+   ========================================================= */
+
+.mobile-menu-button {
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 9px;
+
+    background: transparent;
+    color: var(--text-dark);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.mobile-menu-button:hover {
+    background: var(--lavender-soft);
+    color: var(--deep-lavender);
+}
+
+
+/* =========================================================
+   Mobile Navigation
+   ========================================================= */
+
+.mobile-menu-backdrop {
+    position: fixed;
+
+    inset: 68px 0 0;
+
+    z-index: 45;
+
+    background:
+        rgba(52, 56, 59, 0.10);
+}
+
+.mobile-navigation {
+    position: fixed;
+
+    top: 68px;
+    right: 12px;
+
+    z-index: 49;
+
+    width:
+        min(280px, calc(100vw - 24px));
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: var(--white);
+    color: var(--text-dark);
+
+    box-shadow: var(--shadow-lg);
+}
+
+.mobile-navigation-link {
+    width: 100%;
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 12px;
+
+    border-radius: 9px;
+
+    background: transparent;
+    color: var(--text-dark);
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.mobile-navigation-link:hover {
+    background: var(--lavender-soft);
+    color: var(--deep-lavender);
+}
+
+.mobile-navigation-link.active {
+    background: var(--lavender);
+    color: var(--deep-lavender);
+}
+
+.mobile-navigation-divider {
+    height: 1px;
+
+    margin: 7px 4px;
+
+    background: var(--border);
+}
+
+.mobile-profile-icon {
+    width: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    color: currentColor;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mobile-logout {
+    color: #9a6876;
+}
+
+.mobile-logout:hover {
+    background: var(--rose-soft);
+    color: #754454;
+}
+
+
+/* =========================================================
+   Page Container
+   ========================================================= */
+
+.page-container {
+    width: 100%;
+
+    flex: 1;
+
+    padding:
+        32px
+        16px
+        50px;
+}
+
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.app-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 5px;
+
+    padding:
+        18px
+        16px;
+
+    border-top:
+        1px solid var(--border);
+
+    color: #6b7075;
+
+    font-size: 10px;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   Keyboard Focus
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline:
+        3px solid rgba(117, 107, 143, 0.20);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   Desktop
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+    .top-navbar {
+        height: 76px;
+
+        padding: 0 42px;
+    }
+
+    .navbar-left {
+        gap: 42px;
+    }
+
+    .desktop-navigation {
+        display: flex;
+    }
+
+    .mobile-menu-button,
+    .mobile-navigation,
+    .mobile-menu-backdrop {
+        display: none;
+    }
+
+    .page-container {
+        width: 100%;
+        max-width: 1320px;
+
+        margin: 0 auto;
+
+        padding:
+            54px
+            42px
+            70px;
+    }
+
+    .app-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        padding:
+            20px
+            42px;
+    }
+}
+
+
+/* =========================================================
+   Very Small Screens
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .top-navbar {
+        padding: 0 13px;
+    }
+
+    .camra-logo {
+        gap: 8px;
+    }
+
+    .camra-logo-text {
+        font-size: 16px;
+    }
+
+    .page-container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .mobile-navigation {
+        right: 10px;
+
+        width:
+            calc(100vw - 20px);
+    }
+}
+
+/* =========================================================
+   Profile Menu
+   ========================================================= */
+
+.profile-menu {
+    position: relative;
+}
+
+.profile-trigger {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 3px 5px 3px 3px;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-dark);
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.profile-trigger:hover {
+    background: var(--lavender-soft);
+}
+
+.profile-avatar,
+.profile-dropdown-avatar,
+.profile-large-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--deep-lavender);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+}
+
+.profile-chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 20px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1;
+}
+
+.profile-backdrop {
+    position: fixed;
+    inset: 68px 0 0;
+    z-index: 55;
+    background: transparent;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 60;
+    width: min(310px, calc(100vw - 24px));
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+}
+
+.profile-dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 9px 9px 12px;
+}
+
+.profile-dropdown-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+}
+
+.profile-dropdown-user {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.profile-dropdown-user strong {
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile-dropdown-user span {
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-dropdown-divider {
+    height: 1px;
+    margin: 1px 4px 7px;
+    background: var(--border);
+}
+
+.profile-dropdown-item {
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--text-dark);
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.profile-dropdown-item:hover {
+    background: var(--lavender-soft);
+    color: var(--deep-lavender);
+}
+
+.profile-dropdown-item.logout {
+    color: #9a6876;
+}
+
+.profile-dropdown-item.logout:hover {
+    background: var(--rose-soft);
+    color: #754454;
+}
+
+.logout-icon {
+    width: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   Profile Menu — Desktop
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+    .profile-backdrop {
+        inset: 76px 0 0;
+    }
+
+    .profile-dropdown {
+        top: calc(100% + 11px);
+    }
+}
+
+
+/* =========================================================
+   Profile Menu — Small Screens
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .profile-trigger {
+        padding-right: 2px;
+    }
+
+    .profile-chevron {
+        display: none;
+    }
+
+    .profile-dropdown {
+        right: -2px;
+        width: calc(100vw - 20px);
+    }
+}

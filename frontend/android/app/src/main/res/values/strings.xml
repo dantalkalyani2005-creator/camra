@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CAMRA</string>
+    <string name="title_activity_main">CAMRA</string>
+    <string name="package_name">com.camra.app</string>
+    <string name="custom_url_scheme">com.camra.app</string>
+</resources>

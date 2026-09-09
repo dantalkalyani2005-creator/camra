@@ -1,0 +1,539 @@
+/* =========================================================
+   CAMRA — Report Details
+   Mobile First
+   ========================================================= */
+
+.report-details-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   Top Bar
+   ========================================================= */
+
+.report-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.report-delete-button {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 10px;
+    border: 1px solid rgba(201, 130, 150, 0.30);
+    border-radius: 8px;
+    background: var(--white);
+    color: #9a6876;
+    font-size: 10px;
+    font-weight: 700;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.report-delete-button:hover:not(:disabled) {
+    border-color: rgba(201, 130, 150, 0.45);
+    background: var(--rose-soft);
+    color: #754454;
+}
+
+.report-delete-button:disabled {
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   Report Header
+   ========================================================= */
+
+.report-header {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 25px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+}
+
+.report-title-area {
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.report-title-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 11px;
+    background: var(--blue-soft);
+    color: var(--blue);
+}
+
+.report-title-area > div:last-child {
+    min-width: 0;
+}
+
+.report-title-area h1 {
+    margin: 6px 0 5px;
+    overflow-wrap: anywhere;
+    color: var(--charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 7vw, 38px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+}
+
+.report-title-area p {
+    margin: 0;
+    color: #858a8e;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.report-header-status {
+    align-self: flex-start;
+    padding: 6px 9px;
+    border-radius: 7px;
+    background: #f1f1f2;
+    color: #73787c;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.report-header-status.analyzed {
+    background: var(--lavender-soft);
+    color: var(--deep-lavender);
+}
+
+
+/* =========================================================
+   No Analysis
+   ========================================================= */
+
+.report-no-analysis {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   Analysis Layout
+   ========================================================= */
+
+.analysis-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.analysis-main {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.analysis-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+/* =========================================================
+   Analysis Cards
+   ========================================================= */
+
+.analysis-card {
+    padding: 21px 18px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.analysis-summary {
+    background:
+        linear-gradient(
+            145deg,
+            var(--white),
+            var(--lavender-soft)
+        );
+}
+
+.analysis-label {
+    display: block;
+    color: var(--deep-lavender);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 0.13em;
+    line-height: 1.5;
+}
+
+.analysis-card h2 {
+    margin: 7px 0 13px;
+    color: var(--charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.analysis-card > p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.75;
+    text-align: left;
+}
+
+
+/* =========================================================
+   Analysis Lists
+   ========================================================= */
+
+.analysis-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-top: 17px;
+}
+
+.analysis-list-item {
+    display: grid;
+    grid-template-columns: 27px minmax(0, 1fr);
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.analysis-bullet {
+    width: 27px;
+    min-height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 7px;
+    background: var(--lavender-soft);
+    color: var(--deep-lavender);
+    font-size: 9px;
+    font-weight: 750;
+    line-height: 1.2;
+}
+
+.analysis-list-item p {
+    min-width: 0;
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    text-align: left;
+}
+
+
+/* =========================================================
+   Questions
+   ========================================================= */
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 17px;
+    text-align: left;
+}
+
+.question-item {
+    display: grid;
+    grid-template-columns: 27px minmax(0, 1fr);
+    gap: 10px;
+    align-items: flex-start;
+    padding: 11px;
+    border-radius: 9px;
+    background: var(--blue-soft);
+}
+
+.question-item > span {
+    width: 27px;
+    height: 27px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: var(--white);
+    color: var(--blue);
+    font-size: 9px;
+    font-weight: 750;
+}
+
+.question-item p {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   Sidebar
+   ========================================================= */
+
+.analysis-side-card {
+    padding: 20px 18px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.report-meta {
+    display: flex;
+    flex-direction: column;
+    margin-top: 17px;
+}
+
+.report-meta > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 11px 0;
+    border-top: 1px solid var(--border);
+}
+
+.report-meta > div:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.report-meta span {
+    color: #858a8e;
+    font-size: 9px;
+}
+
+.report-meta strong {
+    color: var(--charcoal);
+    font-size: 11px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   Disclaimer
+   ========================================================= */
+
+.analysis-disclaimer {
+    padding: 16px;
+    border-left: 2px solid var(--peach);
+    background: rgba(245, 221, 210, 0.32);
+}
+
+.analysis-disclaimer p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (min-width: 560px) {
+
+    .report-header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .report-header-status {
+        flex: 0 0 auto;
+    }
+
+    .analysis-card {
+        padding: 24px 22px;
+    }
+
+    .analysis-side-card {
+        padding: 22px;
+    }
+}
+
+
+/* =========================================================
+   Desktop
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+    .report-topbar {
+        margin-bottom: 24px;
+    }
+
+    .report-delete-button {
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .report-header {
+        margin-bottom: 32px;
+        padding-bottom: 25px;
+    }
+
+    .report-title-icon {
+        width: 54px;
+        height: 54px;
+    }
+
+    .report-title-area {
+        gap: 14px;
+    }
+
+    .report-title-area h1 {
+        font-size: 40px;
+    }
+
+    .report-title-area p {
+        font-size: 11px;
+    }
+
+    .analysis-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 290px;
+        align-items: start;
+        gap: 22px;
+    }
+
+    .analysis-main {
+        gap: 16px;
+    }
+
+    .analysis-sidebar {
+        position: sticky;
+        top: 98px;
+    }
+
+    .analysis-card {
+        padding: 27px 25px;
+        border-radius: 14px;
+    }
+
+    .analysis-card h2 {
+        font-size: 24px;
+    }
+
+    .analysis-card > p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .analysis-list {
+        gap: 13px;
+        margin-top: 20px;
+    }
+
+    .analysis-list-item {
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 11px;
+    }
+
+    .analysis-bullet {
+        width: 30px;
+        min-height: 30px;
+    }
+
+    .analysis-list-item p,
+    .question-item p {
+        font-size: 12px;
+    }
+
+    .question-list {
+        gap: 11px;
+        margin-top: 20px;
+    }
+
+    .question-item {
+        grid-template-columns: 30px minmax(0, 1fr);
+        padding: 12px;
+    }
+
+    .question-item > span {
+        width: 30px;
+        height: 30px;
+    }
+
+    .analysis-side-card {
+        padding: 23px 20px;
+    }
+}
+
+
+/* =========================================================
+   Large Desktop
+   ========================================================= */
+
+@media (min-width: 1100px) {
+
+    .analysis-layout {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 28px;
+    }
+
+    .analysis-card {
+        padding: 30px 28px;
+    }
+
+    .analysis-side-card {
+        padding: 25px 22px;
+    }
+}
+
+
+/* =========================================================
+   Small Screens
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .report-delete-button {
+        padding: 0 8px;
+        font-size: 9px;
+    }
+
+    .report-title-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .report-title-area {
+        gap: 10px;
+    }
+
+    .report-title-area h1 {
+        font-size: 24px;
+    }
+
+    .analysis-card {
+        padding: 18px 14px;
+    }
+
+    .analysis-side-card {
+        padding: 18px 14px;
+    }
+}

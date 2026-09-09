@@ -1,0 +1,443 @@
+/* =========================================================
+   CAMRA — Report History
+   Mobile First
+   ========================================================= */
+
+.history-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   Page Heading
+   ========================================================= */
+
+.history-page .page-heading {
+    margin-bottom: 28px;
+}
+
+.history-page .page-heading h1 {
+    margin: 7px 0 8px;
+    color: var(--charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 7vw, 40px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+}
+
+.history-page .page-heading p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   Error
+   ========================================================= */
+
+.history-page > .auth-error {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   Empty State
+   ========================================================= */
+
+.history-page .empty-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.history-page .empty-card-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 15px;
+    border-radius: 11px;
+    background: var(--blue-soft);
+    color: var(--blue);
+}
+
+.history-page .empty-card h3 {
+    margin: 0 0 7px;
+    color: var(--charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.history-page .empty-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   History List
+   ========================================================= */
+
+.history-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   List Header
+   ========================================================= */
+
+.history-list-header {
+    display: none;
+}
+
+
+/* =========================================================
+   History Row
+   ========================================================= */
+
+.history-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        "report actions"
+        "date status";
+    gap: 11px 12px;
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.history-row:last-child {
+    border-bottom: 0;
+}
+
+.history-row:hover {
+    background: #fdfcfd;
+}
+
+
+/* =========================================================
+   Report
+   ========================================================= */
+
+.history-report {
+    grid-area: report;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.history-file-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 9px;
+    background: var(--blue-soft);
+    color: var(--blue);
+}
+
+.history-report-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.history-report-info strong {
+    overflow: hidden;
+    color: var(--charcoal);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-report-info span {
+    color: #858a8e;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   Date
+   ========================================================= */
+
+.history-date {
+    grid-area: date;
+    align-self: center;
+    color: #858a8e;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   Status
+   ========================================================= */
+
+.report-status {
+    grid-area: status;
+    justify-self: start;
+    align-self: center;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: #f1f1f2;
+    color: #73787c;
+    font-size: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.report-status.analyzed {
+    background: var(--lavender-soft);
+    color: var(--deep-lavender);
+}
+
+
+/* =========================================================
+   Actions
+   ========================================================= */
+
+.history-actions {
+    grid-area: actions;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    align-self: start;
+}
+
+.history-open-button,
+.history-delete-button {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 8px;
+    background: transparent;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.history-open-button {
+    color: var(--deep-lavender);
+}
+
+.history-open-button:hover {
+    background: var(--lavender-soft);
+}
+
+.history-delete-button {
+    color: #9a6876;
+}
+
+.history-delete-button:hover {
+    background: var(--rose-soft);
+    color: #754454;
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (min-width: 560px) {
+
+    .history-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto
+            auto;
+        grid-template-areas:
+            "report date actions";
+        align-items: center;
+        gap: 18px;
+        padding: 15px 17px;
+    }
+
+    .history-date {
+        justify-self: end;
+    }
+
+    .report-status {
+        position: absolute;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+
+/* =========================================================
+   Desktop
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+    .history-page .page-heading {
+        margin-bottom: 34px;
+    }
+
+    .history-page .page-heading h1 {
+        font-size: 40px;
+    }
+
+    .history-page .page-heading p {
+        font-size: 13px;
+    }
+
+    .history-list-header {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 1fr)
+            150px
+            110px
+            78px;
+        align-items: center;
+        min-height: 45px;
+        padding: 0 18px;
+        border-bottom: 1px solid var(--border);
+        background: #faf9fa;
+        color: #858a8e;
+        font-size: 8px;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+    }
+
+    .history-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            150px
+            110px
+            78px;
+        grid-template-areas:
+            "report date status actions";
+        min-height: 78px;
+        padding: 13px 18px;
+        gap: 18px;
+    }
+
+    .history-date {
+        justify-self: start;
+    }
+
+    .report-status {
+        position: static;
+        visibility: visible;
+        pointer-events: auto;
+        justify-self: start;
+    }
+
+    .history-actions {
+        justify-self: end;
+        align-self: center;
+    }
+
+    .history-file-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .history-report-info strong {
+        font-size: 13px;
+    }
+
+    .history-report-info span {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   Large Desktop
+   ========================================================= */
+
+@media (min-width: 1100px) {
+
+    .history-list-header {
+        grid-template-columns:
+            minmax(0, 1fr)
+            180px
+            120px
+            82px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .history-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            180px
+            120px
+            82px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+/* =========================================================
+   Small Screens
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .history-page .page-heading h1 {
+        font-size: 27px;
+    }
+
+    .history-row {
+        padding: 12px;
+    }
+
+    .history-file-icon {
+        width: 37px;
+        height: 37px;
+    }
+
+    .history-report-info strong {
+        font-size: 11px;
+    }
+
+    .history-actions {
+        gap: 1px;
+    }
+
+    .history-open-button,
+    .history-delete-button {
+        width: 31px;
+        height: 31px;
+    }
+}
